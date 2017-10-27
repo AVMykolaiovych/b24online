@@ -1,6 +1,6 @@
 <h1>b24online portal</h1>
 
-<hr>
+<h
 
 <h2>How to use:</h2>
 
@@ -9,5 +9,3 @@
 	<li>Install Node Modules: <strong>npm i</strong>;</li>
 	<li>Run the template: <strong>gulp</strong>.</li>
 </ol>
-
-<h2>Gulp tasks:</h2>
