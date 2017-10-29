@@ -4,24 +4,112 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1199px)
-	/**/
-
-
+	html, body 
+		font-size: 14px;
+	.header__info-tel
+		font-size: 1rem;
+	.navigation__list-item
+		padding: 0 11px;
+	.navigation__list-link--search
+		padding: 20px 15px;
+	.navigation__list > .navigation__list-item:nth-of-type(1)
+		margin-left: 8px;
+	.feedback__form-block
+		width: 300px;
+	.feedback__form-name
+		font-size: 1rem;
+	.feedback__form-email
+		font-size: 1rem;
+	.feedback__form-textarea
+		font-size: 1rem;
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
-	/**/
-
-
+	html, body
+		font-size: 12px;
+	.navigation__list-item
+		padding: 0 6px;
+	.navigation__list-item--enter
+		margin-left: 0;
+	.navigation__list-link--search
+		padding: 20px 15px;
+	.navigation__list > .navigation__list-item:nth-of-type(1)
+		margin-left: 14px;
+	.feedback__connect
+		width: 400px;
+		padding: 10px;
+		transform: translateY(60%);
+	.feedback__form-block
+		margin: 30px auto;
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
-	/**/
-
-
+	.navigation
+		display: none;
+	.dropdown-navigation__list-link
+		font-size: 1.25rem;
+	.header__lang-menu
+		display: inline-block;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		@include transition;
+	.header__lang-menu:hover, 
+	.header__lang-menu:focus
+			border: 2px solid #d1d1d1;
+	.header__lang-menu > .header__lang-img
+		width: 26px;
+	.dropdown-navigation__list > .dropdown-navigation__list-item:last-of-type > a
+		color: red;
+	.dropdown-navigation__list > .dropdown-navigation__list-item:last-of-type > a:hover,
+	.dropdown-navigation__list > .dropdown-navigation__list-item:last-of-type > a:focus
+		text-decoration: underline;
+	.navigation__search
+		display: block;
+		z-index: 2;
+	.feedback__connect
+		width: 100%;
+		padding: 25px;
+		text-align: center;
+		transform: none;
+	.feedback__connect-heading
+		margin-bottom: 15px;
+		font-size: 2.5rem;
+	.feedback__form-block
+		margin: 30px auto;
+	.news
+		padding-top: 50px;
+	.news__content
+		margin-bottom: 70px;
+	.news__content-heading
+		text-align: center;
+	.news__video-img
+		margin: 0 auto;
+	.partners
+		padding-top: 50px;
+	#sync2 .item
+		padding: 5px;
+	#sync1.owl-theme
+		margin-top: 38px;
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
-	/**/
-
-
+	.header
+		height: 65px;
+	.header__info-tel
+		font-size: 1rem;
+	.header__info-email
+		font-size: 1rem;
+	.header__lang-rus
+		margin-right: -2px;
+	.header__lang-en
+		margin-right: -2px;
+	.header__lang-menu
+		margin-right: -2px;
+	#sync2
+		display: none;
+	#sync1 .item__description
+		padding: 5px 60px 5px 5px;
+	#sync1.owl-theme
+		margin-top: 60px;
+	.footer
+		padding-top: 50px;
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)
 	/**/

@@ -1,9 +1,34 @@
-$default-font: "roboto-example", sans-serif
-$accent: orange
+$main_font: "ptsans_regular", sans-serif
+$bold_font: "ptsans_bold", sans-serif
+$italic_font: "ptsans_italic", sans-serif
+$nav_bg: #12347e
+$blue_button-bg: #1848b2
+$proposal_bg: #efefef
 
 @mixin transition
-	-webkit-transition: 0.4s ease
-	-moz-transition: 0.4s ease
-	-ms-transition: 0.4s ease
-	-o-transition: 0.4s ease
-	transition: 0.4s ease
+	-webkit-transition: all 0.4s ease
+	-moz-transition: all 0.4s ease
+	-ms-transition: all 0.4s ease
+	-o-transition: all 0.4s ease
+	transition: all 0.4s ease
+@mixin blueButton
+	width: 115px;
+	height: 30px;
+	position: absolute;
+	display: inline-block;
+	bottom: 0;
+	right: 0;
+	color: #fff;
+	background: #1848b2;
+	line-height: 30px;
+	text-align: center;
+	text-decoration: none;
+@mixin inputWrap
+	width: 100%;
+	border: 1px solid transparent;
+	outline: 0;
+	padding: 30px;
+	color: #464646;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: 70px;

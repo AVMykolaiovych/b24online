@@ -1,6 +1,10 @@
 @import "fonts"
 @import "libs"
 @import "vars"
+@import "owl.carousel.min"
+@import "owl.theme.default.min"
+@import "slick"
+@import "slick-theme"
 
 *
 	-webkit-box-sizing: border-box
@@ -10,45 +14,561 @@
 		-webkit-box-sizing: border-box
 		-moz-box-sizing: border-box
 		box-sizing: border-box
-
-*::-webkit-input-placeholder
-	color: #666
-	opacity: 1
-
-*:-moz-placeholder
-	color: #666
-	opacity: 1
-
-*::-moz-placeholder
-	color: #666
-	opacity: 1
-
-*:-ms-input-placeholder
-	color: #666
-	opacity: 1
-
+textarea::placeholder
+	color: #666;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+textarea:focus::placeholder
+	opacity: 0; 
+	transition: opacity 0.4s ease;	
+input::-webkit-input-placeholder
+	color: #666;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+input:-moz-placeholder
+	color: #666;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+input::-moz-placeholder
+	color: #666;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+input:-ms-input-placeholder
+	color: #666;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+input:focus::-webkit-input-placeholder 
+	opacity: 0; 
+	transition: opacity 0.4s ease;
+input:focus::-moz-placeholder          
+	opacity: 0; 
+	transition: opacity 0.4s ease;
+input:focus:-moz-placeholder           
+	opacity: 0; 
+	transition: opacity 0.4s ease;
+input:focus:-ms-input-placeholder      
+	opacity: 0; 
+	transition: opacity 0.4s ease;
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: #666;
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: #666;
 
 html, body
-	height: 100%
-
+	height: 100%;
+	min-height: 100%;
+	font-size: 16px;
 body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.65
-	font-family: $default-font
-	overflow-x: hidden
-	opacity: 1
+	min-width: 320px;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background: #fcfcfc;
+	line-height: 1.4;
+	font-family: $main_font;
+	overflow-x: hidden;
+	opacity: 1;
+h1,
+h2,
+h3,
+h4
+	padding: 0;
+	margin: 0;
+p, ul
+	margin: 0;
+	padding: 0;
+
+.container
+	background: #fff;
+	box-shadow: 0 0 100px rgba(70, 60, 53, 0.3)
 
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
 
+/*---Header---styles---*/
+.header
+	height: 85px
+	display: flex
+	align-items: center
+	&__support
+		max-width: 262px
+		height: auto
+		&-text
+			width: 100%
+			color: #575757
+			font-size: 0.875rem
+	&__button
+		max-width: 130px
+		height: 36px
+		background-color: white
+		box-shadow: 3.5px 6.1px 26px rgba(70, 60, 53, 0.3)
+		&-ask
+			width: 100%
+			color: #272727
+			font-size: 0.875rem
+			display: inline-block
+			line-height: 36px
+			text-align: center
+			position: relative
+			&:hover, &:focus
+				text-decoration: none
+				color: #1c1b1b
+				&::before 
+					transform-origin: center bottom
+					transform: scaleY(1)
+			&::before
+				content: ''
+				display: block
+				width: 100%
+				height: 100%
+				background-color: #e6e6e6
+				position: absolute
+				top: 0
+				left: 0
+				z-index: 0
+				transform: scaleY(0)
+				transform-origin: center top
+				transition: transform 0.2s ease-in
+			&-text
+				position: relative
+				z-index: 1
+	&__info
+		max-width: 165px
+		&-tel
+			display: inline-block
+			color: #373737
+			float: right
+			font-size: 1.25rem
+			cursor: default
+			&:hover, &:focus
+				text-decoration: none
+				color: #373737
+		&-email
+			display: inline-block
+			color: #393939
+			float: right
+			font-size: 0.875rem
+			cursor: default
+			&:hover, &:focus
+				text-decoration: none
+				color: #373737
+	&__lang
+		float: right
+		&-rus
+			display: inline-block
+			margin-right: 3px
+			border: 2px solid transparent
+			border-radius: 50%
+			@include transition
+			&:hover, &:focus
+				border: 2px solid #d1d1d1
+		&-en
+			display: inline-block
+			border: 2px solid transparent
+			border-radius: 50%
+			@include transition
+			&:hover, &:focus
+				border: 2px solid #d1d1d1
+		&-menu
+			display: none
+			position: relative
+/*---Header---styles---end---*/
+
+/*---Navigation---styles*/
+.navigation
+	display: flex
+	align-items: center
+	justify-content: space-between
+	background: $nav_bg
+	&__list
+		width: 100%
+		list-style-type: none
+		&-item
+			display: inline-block
+			padding: 0 17px
+			&--enter
+				margin-left: 25px
+			&--search
+				padding: 0
+		&-link
+			display: block
+			width: auto
+			padding: 19px 0 14px
+			color: #fff
+			font-family: $bold_font
+			border-bottom: 5px solid transparent
+			@include transition
+			&:hover, &:focus
+				text-decoration: none
+				color: #2d6df7
+				border-bottom: 5px solid red
+			&-img
+				width: 26px
+				position: relative
+				z-index: 2
+			&--search
+				padding: 20px
+				border-bottom: none
+				&:hover, &:focus
+					background: rgba(45,109,247,0.1)
+					border-bottom: none
+					opacity: 0.9
+	&__search
+		display: none
+		position: absolute
+		z-index: 1
+		top: 85px
+		width: 100%
+		box-sizing: border-box
+		border: 2px solid #12347e
+		border-radius: 4px
+		font-size: 12px
+		background-color: white
+		background-image: url('../img/search_icon.svg')
+		background-position: 10px 7px;
+		background-repeat: no-repeat
+		padding: 10px 10px 10px 40px;
+		transition: width 0.4s ease-in-out
+		&:focus
+    		width: 100%
+    		outline: 0
+.dropdown-navigation__list
+	display: none
+	position: absolute
+	top: 86px
+	right: 0
+	background: #12347e
+	border-radius: 5px
+	width: 100%
+	list-style-type: none
+	z-index: 3
+	opacity: .9
+	&-item
+		display: block
+		padding: 5px 10px
+	&-link
+		display: block
+		width: auto
+		font-size: 0.875rem
+		letter-spacing: 1.2px
+		color: #fff
+		font-family: $bold_font
+		@include transition
+		text-align: center
+		&:hover, &:focus
+			text-decoration: none
+			color: #fff;
+		&::before
+			margin-right: 20px;
+			content: '[';
+			transform: translateX(20px);
+		&::after
+			margin-left: 20px;
+			content: ']';
+			transform: translateX(-20px);
+		&::before, &::after
+			display: inline-block;
+			opacity: 0;
+			transition: transform 0.3s, opacity 0.2s;
+		&:hover::before, 
+		&:hover::after, 
+		&:focus::before, 
+		&:focus::after
+			opacity: 1;
+			transform: translateX(0px);
+/*---Navigation---styles---end---*/
+/*---News---styles*/
+.news
+	padding-top: 95px;
+	background: #fff;
+	position: relative;
+	&__content
+		&-heading
+			color: #272727;
+			font-size: 2.25rem;
+			font-family: $bold_font;
+			padding-bottom: 25px;
+		&-text
+			color: #525252;
+			padding-bottom: 16px;
+		&-link
+			width: 115px;
+			height: 30px;
+			position: absolute;
+			display: inline-block;
+			color: #fff;
+			background: #1848b2;
+			line-height: 30px;
+			text-align: center;
+			text-decoration: none;
+			@include transition;
+			&:hover, &:focus
+				background: red;
+				color: #fff;
+				text-decoration: none;
+	&__video
+		cursor: pointer;
+/*---Partners---styles---*/
+.partners
+	padding-top: 115px;
+	padding-bottom: 60px;
+	background: #fff;
+	&__heading
+		color: #272727;
+		font-family: $bold_font;
+		font-size: 2.250rem;
+		padding-left: 15px;
+		margin-bottom: 60px
+/*---Partners---styles---end---*/
+/*---Feedback---styles---*/
+.feedback
+	background: #efefef;
+	&__connect
+		width: 455px;
+		margin: 0 auto;
+		transform: translateY(50%);
+		&-heading
+			color: #4d4d4d;
+			font-size: 3.500rem;
+			font-family: $bold_font;
+			margin-bottom: 35px;
+		&-subheading
+			color: #4d4d4d;
+			font-size: 1.625rem;
+			font-family: $bold_font;			
+	&__form
+		&-block
+			width: 360px;
+			margin: 60px auto;
+		&-wrap
+			max-width: 360px;
+			margin-bottom: 20px;
+			&:last-of-type
+				margin-bottom: 0;
+		&-name
+			@include inputWrap;
+		&-email
+			@include inputWrap;
+		&-textarea
+			@include inputWrap;
+			height: 100px;
+		&-button
+			width: 100%;
+			border: 1px solid transparent;
+			outline: 0;
+			height: 70px;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 1.125rem;
+			font-family: $bold_font;
+			background-color: #1848b2;
+			letter-spacing: 1.5px;
+			@include transition;
+			&:hover, &:focus
+				background-color: #336ae3;
+		&-text
+			color: #5f5f5f;
+			font-size: 0.750rem;
+			text-align: center;
+			padding: 0 25px;
+/*---Feedback---styles---end---*/
+/*---Footer---styles---*/
+.footer
+	padding-top: 70px
+	&__policy
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		margin-bottom: 20px;
+		&-link
+			display: -inline-block;
+			color: #a7a7a7;
+			font-size: 0.813rem;
+			font-weight: 600;
+			user-select: none;
+			text-decoration: underline;
+			@include transition;
+			&:first-of-type
+				margin-right: 25px;
+			&:hover, &:focus
+				color: #2d6df7;
+	&__header
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		margin-bottom: 20px;
+		&-text
+			user-select: none;
+			color: #a7a7a7;
+			font-weight: 600;
+			font-size: 0.813rem;
+			text-transform: uppercase;
+	&__social
+		display: flex;
+		height: 50px;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 50px;
+		&-link
+			display: inline-block;
+			border-radius: 50%;
+			margin-right: 10px;
+			&:last-of-type
+				margin-right: 0;
+			&:hover, &:focus
+				transform: scale(1.08, 1.08);
+				box-shadow: 2px 8px 20px 0 rgba(31,32,68,0.25);
+		&-img
+			width: 43px;
+/*---Footer---styles---end---*/
+/*---Owl---carousel---styles*/
+#sync1 .item
+	background-image: url('../img/main_foto.jpg');
+	background-position: center center;
+	background-size: cover;
+	height: 400px;
+#sync1 .item__description
+	position: relative
+	height: 120px;
+	background-color: #272727;
+	color: #fff;
+	font-family: $italic_font;
+	padding: 25px 75px 25px 15px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+#sync2
+	overflow-x: hidden
+#sync2 .item
+	height: 180px; 
+	background: #f0f0f0;
+	padding: 30px 15px;
+	text-align: left;
+	cursor: default;
+	user-select: none;
+	position: relative;
+	color: #535353;
+	font-size: 1.125rem;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	@include transition;
+#sync2 .item > a
+	@include blueButton;
+#sync2 .owl-item.active.current .item > a,
+	background: red;
+#sync2 .owl-item:nth-child(4) > .item
+	margin-right: 0;
+#sync2 .owl-item:nth-child(odd) > .item
+	margin-right: 5px;
+#sync2 .owl-item:nth-child(2) > .item
+	margin-right: 5px;
+#sync2 .item .current .item
+    background: #0c83e7;
+.owl-theme .owl-nav [class*='owl-']
+    transition: all .3s ease;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+.owl-theme .owl-nav
+	margin-top: 0;
+#sync2 .owl-item.active.current > .item
+	background: $nav_bg;
+	color: #fff;
+#sync2 .owl-item.active.current > .item::before	
+	content: "";
+	border-bottom: 15px solid #12347e;
+	border-right: 17px solid transparent;
+	border-left: 17px solid transparent;
+	position: absolute;
+	top: -15px;
+	left: 135px;
+	z-index: 10;
+#sync2 .owl-item.active.current > .item::after
+    content: "";
+    border-bottom: 17px solid #12347e;
+    border-right: 19px solid transparent;
+    border-left: 19px solid transparent;
+    position: absolute;
+    top: -16px;
+    left: 133px;
+    z-index: 8;
+.owl-theme .owl-nav [class*='owl-'].disabled:hover
+    background-color: #D6D6D6;
+#sync1.owl-theme
+  	position: relative;
+#sync1.owl-theme .owl-next, 
+#sync1.owl-theme .owl-prev
+    width: 60px;
+    height: 60px;
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    background: #0c0c0c;
+#sync1.owl-theme .owl-next:hover, 
+#sync1.owl-theme .owl-prev:hover,
+#sync1.owl-theme .owl-next:focus, 
+#sync1.owl-theme .owl-prev:focus,
+    background: #131313;
+#sync1.owl-theme .owl-prev
+	right: 0;
+	top: 460px;
+#sync1.owl-theme .owl-next
+	right: 0;
+	top: 400px;
+/*---Owl---carousel---styles---end---*/
+/*---Slick---slider---*/
+.slick-prev
+	position: absolute;
+	display: block;
+	background-image: url('../img/left_arrow-grey.png'); 
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 30px;
+	width: 20px;
+	cursor: pointer;
+	top: 50%;
+	left: 30px;
+	padding: 0;
+	border: none;
+	outline: none;
+	z-index: 2;
+.slick-next 
+	position: absolute;
+	display: block;
+	background-image: url('../img/right_arrow-grey.png'); 
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 30px;
+	width: 20px;
+	cursor: pointer;
+	top: 50%;
+	right: 30px;
+	padding: 0;
+	border: none;
+	outline: none;
+	z-index: 2;
+.slick-next:before,
+.slick-prev:before
+	content: '';
+.slick-prev:focus, 
+.slick-prev:hover
+	background-image: url('../img/left_arrow-grey.png'); 
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;	
+.slick-next:focus, 
+.slick-next:hover
+	background-image: url('../img/right_arrow-grey.png'); 
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+.slick-list
+	margin: 0 90px;
+/*---Slick---slider---end---*/
 @import "media" // Всегда в конце
