@@ -1,4 +1,7 @@
 $(function() {
+    $(".navigation__list-link--search").click(function() {
+        $(".navigation__search").toggle(400);
+    });
 	/*---Open---dropdown---navigation---menu---small-screen---*/
 	var dropdownMenu = $(".dropdown-navigation__list");
 	var dropdownbutton = $('.header__lang-menu');
@@ -25,13 +28,13 @@ $(function() {
 
 	sync1.owlCarousel({
 		items : 1,
-		slideSpeed : 2000,
+		slideSpeed : 500,
 		nav: true,
 		autoplay: false,
 		dots: false,
 		loop: true,
 		responsiveRefreshRate : 200,
-		navText: ['<img src="../img/left_arrow.png" alt="" style="transform: translateY(50%);" />','<img src="../img/right_arrow.png" alt="" style="transform: translateY(50%);" />'],
+		navText: ['<img src="../img/left_arrow.png" alt="Left" style="transform: translateY(50%);" />','<img src="../img/right_arrow.png" alt="Right" style="transform: translateY(50%);" />'],
   	}).on('changed.owl.carousel', syncPosition);
 
   	sync2
@@ -42,10 +45,10 @@ $(function() {
   		items : slidesPerPage,
   		dots: false,
   		nav: true,
-  		smartSpeed: 1000,
-  		slideSpeed : 2000,
+  		smartSpeed: 500,
+  		slideSpeed : 500,
     	slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
-    	responsiveRefreshRate : 100
+    	responsiveRefreshRate : 200,
 	}).on('changed.owl.carousel', syncPosition2);
 
   	function syncPosition(el) {

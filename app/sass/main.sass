@@ -82,7 +82,8 @@ p, ul
 
 .container
 	background: #fff;
-	box-shadow: 0 0 100px rgba(70, 60, 53, 0.3)
+	box-shadow: 0 0 100px rgba(70, 60, 53, 0.3);
+	overflow: hidden;
 
 .img-responsive
 	display: block
@@ -223,15 +224,16 @@ p, ul
 		z-index: 1
 		top: 85px
 		width: 100%
+		max-width: 1070px
 		box-sizing: border-box
 		border: 2px solid #12347e
 		border-radius: 4px
-		font-size: 12px
+		font-size: 0.875rem
 		background-color: white
 		background-image: url('../img/search_icon.svg')
-		background-position: 10px 7px;
+		background-position: 9px 17px;
 		background-repeat: no-repeat
-		padding: 10px 10px 10px 40px;
+		padding: 19px 10px 18px 40px;
 		transition: width 0.4s ease-in-out
 		&:focus
     		width: 100%
@@ -247,6 +249,20 @@ p, ul
 	list-style-type: none
 	z-index: 3
 	opacity: .9
+	&-search
+		width: 100%
+		box-sizing: border-box
+		border: 2px solid #12347e
+		border-radius: 4px
+		font-size: 1.25rem
+		background-color: white
+		background-image: url('../img/search_icon.svg')
+		background-position: 10px 4px;
+		background-repeat: no-repeat
+		padding: 5px 5px 5px 45px;
+		transition: width 0.4s ease-in-out
+		&:focus
+    		outline: 0
 	&-item
 		display: block
 		padding: 5px 10px
@@ -339,7 +355,33 @@ p, ul
 		&-subheading
 			color: #4d4d4d;
 			font-size: 1.625rem;
-			font-family: $bold_font;			
+			font-family: $bold_font;	
+	&__map
+		margin-top: 60px;
+		&-heading		
+			color: #272727;
+			font-family: $bold_font;
+			font-size: 2.25rem;
+			padding-bottom: 60px;
+		&-address	
+			color: #272727;
+			font-family: $bold_font;
+			font-size: 1rem;	
+			padding-bottom: 35px;
+		&-tel	
+			color: #272727;
+			font-family: $bold_font;
+			font-size: 2.25rem;
+			padding-bottom: 25px;	
+		&-email		
+			color: #272727;
+			font-family: $bold_font;
+			font-size: 1rem;	
+			padding-bottom: 50px;
+		&-google	
+			width: 100%;
+			height: 315px;
+			border: 0;	
 	&__form
 		&-block
 			width: 360px;
@@ -349,7 +391,14 @@ p, ul
 			margin-bottom: 20px;
 			&:last-of-type
 				margin-bottom: 0;
+		&-heading
+			color: #272727;
+			font-family: $bold_font;
+			font-size: 2.25rem;
+			padding-bottom: 40px;
 		&-name
+			@include inputWrap;
+		&-tel
 			@include inputWrap;
 		&-email
 			@include inputWrap;
@@ -433,16 +482,12 @@ p, ul
 	background-size: cover;
 	height: 400px;
 #sync1 .item__description
-	position: relative
+	position: relative;
 	height: 120px;
 	background-color: #272727;
 	color: #fff;
 	font-family: $italic_font;
 	padding: 25px 75px 25px 15px;
-	overflow-x: hidden;
-	overflow-y: hidden;
-#sync2
-	overflow-x: hidden
 #sync2 .item
 	height: 180px; 
 	background: #f0f0f0;
@@ -453,8 +498,6 @@ p, ul
 	position: relative;
 	color: #535353;
 	font-size: 1.125rem;
-	overflow-x: hidden;
-	overflow-y: hidden;
 	@include transition;
 #sync2 .item > a
 	@include blueButton;
@@ -485,17 +528,8 @@ p, ul
 	border-left: 17px solid transparent;
 	position: absolute;
 	top: -15px;
-	left: 135px;
+	left: 47%;
 	z-index: 10;
-#sync2 .owl-item.active.current > .item::after
-    content: "";
-    border-bottom: 17px solid #12347e;
-    border-right: 19px solid transparent;
-    border-left: 19px solid transparent;
-    position: absolute;
-    top: -16px;
-    left: 133px;
-    z-index: 8;
 .owl-theme .owl-nav [class*='owl-'].disabled:hover
     background-color: #D6D6D6;
 #sync1.owl-theme
@@ -519,6 +553,14 @@ p, ul
 #sync1.owl-theme .owl-next
 	right: 0;
 	top: 400px;
+.owl-item.cloned
+	opacity: 0;
+.owl-carousel .owl-stage-outer
+	overflow: visible;
+.owl-item
+	opacity: 0;
+.owl-item.active
+	opacity: 1;
 /*---Owl---carousel---styles---end---*/
 /*---Slick---slider---*/
 .slick-prev
@@ -571,4 +613,6 @@ p, ul
 .slick-list
 	margin: 0 90px;
 /*---Slick---slider---end---*/
+
+
 @import "media" // Всегда в конце
