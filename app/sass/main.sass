@@ -73,7 +73,9 @@ body
 h1,
 h2,
 h3,
-h4
+h4,
+h5,
+h6
 	padding: 0;
 	margin: 0;
 p, ul
@@ -328,6 +330,89 @@ p, ul
 				text-decoration: none;
 	&__video
 		cursor: pointer;
+/*---News---styles---end---*/
+/*---Projects---styles---*/
+.projects
+	padding-top: 2.813em;
+	&__wrap
+		position: relative;
+	&__heading
+		color: #272727;
+		font-family: $bold_font;
+		font-size: 2.25rem;
+		padding-bottom: 2.188rem;
+	&__subheading
+		color: #151515;
+		font-family: $bold_font;
+		font-size: 1.625rem;
+		line-height: 1;
+		margin-bottom: 4.688rem;
+	&__name
+		position: absolute;
+		top: 50%;
+		left: -17.313rem;
+		transform: translateY(-50%);
+		color: #12347e;
+		font-family: $bold_font;
+		font-size: 2.188rem;
+		line-height: 1;
+	&__description
+		color: #252525;
+		margin-bottom: 7.188rem;
+/*---Projects---styles---end---*/
+/*---Team---styles---*/
+.team
+	padding-top: 2.813rem;
+	&__heading
+		color: #272727;
+		font-family: $bold_font;
+		font-size: 2.250rem;
+		margin-bottom: 2.813rem;
+	&__subheading
+		color: #6e6e6e;
+		font-family: $bold_font;
+		font-size: 1.625rem;
+		margin-bottom: 2.0rem;
+	&__manager
+		background: #f3f3f3;
+		width: 100%;
+		max-width: 34.688rem;
+		height: 16.063rem;
+		background-image: url('../img/team_photo.png');
+		background-repeat: no-repeat;
+		background-position: 1.875rem center;
+		position: relative;
+		margin-bottom: 1.8rem;
+		&-info
+			display: block;
+			position: absolute;
+			top: 4.063rem;
+			left: 14.688rem;
+			&-fullname
+				color: #272727;
+				font-size: 1.250rem;
+				font-family: $bold_font;
+				user-select: none;
+			&-rate
+				color: #6e6e6e;
+				font-size: 1.125rem;
+				font-family: $bold_font;
+				user-select: none;
+		&-button
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 10.313rem;
+			height: 2.750rem;
+			background-color: #12347e;
+			color: #fff;
+			line-height: 2.750rem;
+			border: 1px solid transparent;
+			@include transition;
+			&:hover, &:focus
+				background: #ab0821;
+				outline: 0;
+/*---Team---styles---end---*/
 /*---Partners---styles---*/
 .partners
 	padding-top: 115px;
