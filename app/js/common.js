@@ -126,3 +126,16 @@ $(function() {
     });
     /*---Connected---slick---slider---end---*/
 });
+
+    /*---Questions---*/
+$(document).ready(function(){
+    $('.questions__akkordeon-header').click(function(){
+        if(!$(this).hasClass('active')){    
+            $('.questions__akkordeon-header').removeClass('active').next('div').slideUp();
+            $(this).addClass('active');
+            $(this).next('div').slideDown(200); 
+        } else {   
+            $(this).removeClass('active').next('div').slideUp();    
+        }
+    });
+});

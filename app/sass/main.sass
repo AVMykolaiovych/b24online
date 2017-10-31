@@ -5,6 +5,7 @@
 @import "owl.theme.default.min"
 @import "slick"
 @import "slick-theme"
+@import "fontello"
 
 *
 	-webkit-box-sizing: border-box
@@ -436,51 +437,51 @@ p, ul
 			color: #4d4d4d;
 			font-size: 3.500rem;
 			font-family: $bold_font;
-			margin-bottom: 35px;
+			margin-bottom: 2.188rem;
 		&-subheading
 			color: #4d4d4d;
 			font-size: 1.625rem;
 			font-family: $bold_font;	
 	&__map
-		margin-top: 60px;
+		margin-top: 3.750rem;
 		&-heading		
 			color: #272727;
 			font-family: $bold_font;
 			font-size: 2.25rem;
-			padding-bottom: 60px;
+			padding-bottom: 3.750rem;
 		&-address	
 			color: #272727;
 			font-family: $bold_font;
 			font-size: 1rem;	
-			padding-bottom: 35px;
+			padding-bottom: 2.188rem;
 		&-tel	
 			color: #272727;
 			font-family: $bold_font;
 			font-size: 2.25rem;
-			padding-bottom: 25px;	
+			padding-bottom: 1.563rem;	
 		&-email		
 			color: #272727;
 			font-family: $bold_font;
 			font-size: 1rem;	
-			padding-bottom: 50px;
+			padding-bottom: 3.125rem;
 		&-google	
 			width: 100%;
-			height: 315px;
+			height: 19.688rem;
 			border: 0;	
 	&__form
 		&-block
 			width: 360px;
-			margin: 60px auto;
+			margin: 3.750rem auto;
 		&-wrap
 			max-width: 360px;
-			margin-bottom: 20px;
+			margin-bottom: 1.250rem;
 			&:last-of-type
 				margin-bottom: 0;
 		&-heading
 			color: #272727;
 			font-family: $bold_font;
 			font-size: 2.25rem;
-			padding-bottom: 40px;
+			padding-bottom: 2.5rem;
 		&-name
 			@include inputWrap;
 		&-tel
@@ -510,6 +511,51 @@ p, ul
 			text-align: center;
 			padding: 0 25px;
 /*---Feedback---styles---end---*/
+/*---Questions---styles---*/
+.questions
+	padding-top: 2.813rem;
+	&__header
+		color: #272727;
+		font-family: $bold_font;
+		font-size: 2.250rem;
+		margin-bottom: 2.813rem;
+	&__akkordeon
+		width: 100%;
+		&-header
+			cursor: pointer;
+			padding: 1.563rem 4.375rem 1.563rem 1.563rem;
+			position: relative;
+			margin: 0;
+			color: #272727;
+			font-family: $bold_font;
+			font-size: 1.125rem;
+			background: #f0f0f0;
+			@include transition;
+			&:hover, &:focus
+				background: #e3e3e3;
+			&::before
+				content: '\e800';
+				font-family: 'fontello';
+				position: absolute;
+				color: #12347e;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 1.313rem;
+				width: 25px;
+				height: 25px;
+				font-weight: 700;
+		&-header.active
+			@include transition;
+			&::before
+				content: '\e801';
+		&-text
+			display: none;
+			color: #272727;
+			font-size: 1.125rem;
+			padding: 1.25rem 4.063rem 1.875rem 1.875rem;
+		&-wrap
+			margin-bottom: 0.938rem;
+/*---Questions---styles---end---*/
 /*---Footer---styles---*/
 .footer
 	padding-top: 70px
