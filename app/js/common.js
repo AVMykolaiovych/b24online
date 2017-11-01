@@ -22,25 +22,27 @@ $(function() {
 	/*---Open---dropdown---navigation---menu---small-screen---*/
 	/*---Connected---owl-carousel---slider---*/
 	var sync1 = $("#sync1");
-	var sync2 = $("#sync2");
+    var sync2 = $("#sync2");
+	var sync3 = $("#sync3");
 	var slidesPerPage = 4;
 	var syncedSecondary = true;
 
 	sync1.owlCarousel({
 		items : 1,
 		slideSpeed : 500,
+        smartSpeed: 500,
 		nav: true,
 		autoplay: false,
 		dots: false,
 		loop: true,
 		responsiveRefreshRate : 200,
-		navText: ['<img src="../img/left_arrow.png" alt="Left" style="transform: translateY(50%);" />','<img src="../img/right_arrow.png" alt="Right" style="transform: translateY(50%);" />'],
+		navText: ['',''],
   	}).on('changed.owl.carousel', syncPosition);
 
   	sync2
-  		.on('initialized.owl.carousel', function () {
-  			sync2.find(".owl-item").eq(0).addClass("current");
-  		})
+  	.on('initialized.owl.carousel', function () {
+  		sync2.find(".owl-item").eq(0).addClass("current");
+  	})
   	.owlCarousel({
   		items : slidesPerPage,
   		dots: false,
@@ -50,6 +52,18 @@ $(function() {
     	slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
     	responsiveRefreshRate : 200,
 	}).on('changed.owl.carousel', syncPosition2);
+
+    sync3.owlCarousel({
+        items : 1,
+        slideSpeed : 500,
+        smartSpeed: 600,
+        nav: true,
+        autoplay: false,
+        dots: false,
+        loop: true,
+        responsiveRefreshRate : 200,
+        navText: ['',''],
+    }).on('changed.owl.carousel');
 
   	function syncPosition(el) {
     	//if you set loop to false, you have to restore this next line

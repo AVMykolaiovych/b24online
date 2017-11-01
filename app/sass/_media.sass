@@ -25,6 +25,10 @@
 	.navigation__search
 		max-width: 877px;
 		padding: 18px 10px 18px 40px;
+	#sync2 .item
+		padding: 5px;
+	.gallery__video-link
+		width: 20.5rem;
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
 	html, body
@@ -43,8 +47,8 @@
 		transform: translateY(60%);
 	.feedback__form-block
 		margin: 30px auto;
-	#sync2 .owl-item.active.current > .item::before	
-		left: 43%;
+	#sync2 .item
+		height: 12.25rem;
 	.navigation__search
 		max-width: 670px;
 		padding: 18px 10px 18px 40px;
@@ -56,6 +60,12 @@
 		top: 2.063rem;
 	.feedback__map
 		margin-top: 2.5rem;
+	.about__statistic
+		margin: 4rem 0 0;
+	.gallery__video-link
+		width: 28.5rem;
+	.gallery__foto-img
+		width: 28.5rem;
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
 	.navigation
@@ -105,20 +115,29 @@
 		margin: 0 auto;
 	.partners
 		padding-top: 50px;
-	#sync2 .item
-		padding: 5px;
 	#sync1.owl-theme
 		border-top: 2px solid #efefef;
 	#sync2 .owl-item.active.current > .item::before	
 		display: none;
+	#sync2 .item
+		height: 17.25rem;
 	#sync1 .item__description
-    	padding: 10px 75px 25px 15px;
+    	padding: 5px 55px 5px 5px;
 	#sync2 .item > a
 		width: 110.75px;
 	.team__manager
 		margin: 20px auto;
 	.questions__akkordeon-header::before
 		right: 5px;
+	.about__content
+		margin-bottom: 1.5rem;
+	.about__info
+		height: 8.9375rem;
+	.about__info-heading
+		text-align: center;
+	.about__statistic
+		margin: 0.5rem 0 2rem;
+		text-align: center;
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
 	.header
@@ -140,7 +159,8 @@
 	#sync2
 		display: none;
 	#sync1 .item__description
-		padding: 5px 60px 5px 5px;
+    padding: 5px 50px 5px 5px;
+    font-size: 9px;
 	.footer
 		padding-top: 50px;
 	.team__manager
