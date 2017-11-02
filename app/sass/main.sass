@@ -354,6 +354,7 @@ p, ul
 			transform: translateX(-50%);
 			position: relative;
 			left: 50%;
+			margin-bottom: 2rem;
 	&__foto
 		margin: 5rem 0 2.25rem;
 		color: #6e6e6e;
@@ -364,6 +365,7 @@ p, ul
 			height: 15.0625rem;
 			background-position: center center;
 			background-size: cover;
+			background-repeat: no-repeat;
 			transform: translateX(-50%);
 			position: relative;
 			left: 50%;
@@ -373,17 +375,59 @@ p, ul
 		color: #6e6e6e;
 		font-family: $bold_font;
 		font-size: 1.625rem;
-		&-link 
-			display: flex;
-			justify-content: center;
-			align-items: top;
+		&-img
+			margin: 0 auto; 
 		&-description
 			color: #12347e;
 			font-family: $bold_font;
 			font-size: 1.25rem;
 			text-decoration: underline;
 			text-align: center;
+			margin-bottom: 2rem;
 /*---Gallery---styles---end---*/
+/*---News---styles---*/
+.news
+	padding-top: 2.8125rem;
+	&__heading
+		color: #272727;
+		font-family: $bold_font;
+		font-size: 2.25rem;
+		margin-bottom: 1.875rem;
+	&__foto
+		position: relative;
+		width: 100%;
+		&-description
+			position: absolute;
+			bottom: 0;
+			height: 6.8125rem;
+			width: 100%;
+			background: rgba(0, 0, 0, .7);
+			color: #fff;
+			font-size: 1.375rem;
+			font-family: $bold_font;
+			padding: 1rem;
+	&__item
+		width: 100%;
+		background: #f0f0f0;
+		height: 24.375rem;
+		position: relative;
+		&-heading
+			color: #535353;
+			font-family: $bold_font;
+			font-size: 1.125rem;
+			padding: 1rem;
+			line-height: 1.2;
+		&-text
+			color: #585858;
+			padding: 0 1rem;
+			line-height: 1.2;
+		&-link
+			@include blueButton;
+			&:hover, &:focus
+				background: red;
+				text-decoration: none;
+				color: #fff;
+/*---News---styles---end---*/
 /*---About---styles---*/
 .about
 	padding-top: 3.75rem;
