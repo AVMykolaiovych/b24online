@@ -395,10 +395,14 @@ p, ul
 		margin-bottom: 1.875rem;
 	&__foto
 		position: relative;
-		width: 100%;
+		&-img
+			width: 100%;
+			margin-bottom: 2rem;
+			height: 26.25rem;
 		&-description
 			position: absolute;
 			bottom: 0;
+			left: 0;
 			height: 6.8125rem;
 			width: 100%;
 			background: rgba(0, 0, 0, .7);
@@ -409,25 +413,47 @@ p, ul
 	&__item
 		width: 100%;
 		background: #f0f0f0;
-		height: 24.375rem;
-		position: relative;
-		&-heading
-			color: #535353;
-			font-family: $bold_font;
-			font-size: 1.125rem;
-			padding: 1rem;
-			line-height: 1.2;
-		&-text
-			color: #585858;
-			padding: 0 1rem;
-			line-height: 1.2;
-		&-link
-			@include blueButton;
-			&:hover, &:focus
-				background: red;
-				text-decoration: none;
+		margin-bottom: 2rem;
+		&-image
+			width: 100%;
+		&-content
+			&-heading
+				color: #535353;
+				font-family: $bold_font;
+				font-size: 1.125rem;
+				padding: 1rem;
+			&-text
+				color: #585858;
+				padding: 0 1rem 1rem;
+			&-button 
+				text-align: right;
+			&-link
+				width: 115px;
+				height: 30px;
+				display: inline-block;
 				color: #fff;
+				background: #1848b2;
+				line-height: 30px;
+				text-align: center;
+				text-decoration: none;
+				&:hover, &:focus
+					background: red;
+					text-decoration: none;
+					color: #fff;
 /*---News---styles---end---*/
+/*---News-more---styles---*/
+.news-more
+	padding-top: 50px; 
+	&__heading
+		color: #272727;
+		font-family: $bold_font;
+		font-size: 2.25rem;
+		line-height: 1.2;
+		margin-bottom: 50px; 
+	&__text
+		color: #272727;
+		font-size: 1.125rem;
+/*---News-more---styles---end---*/
 /*---About---styles---*/
 .about
 	padding-top: 3.75rem;
@@ -738,6 +764,8 @@ p, ul
 	background-position: center center;
 	background-size: cover;
 	height: 400px;
+#sync3.owl-carousel.owl-theme.owl-loaded.owl-drag
+	overflow: hidden;
 #sync1 .item__description
 	position: relative;
 	height: 7.5rem;
