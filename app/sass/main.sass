@@ -97,6 +97,7 @@ p, ul
 	color: $contentHeaderColor;
 	font-family: $contentBoldFont;
 	font-size: 2.25rem;
+	line-height: 1.2;
 
 .m0
 	margin: 0
@@ -154,7 +155,7 @@ p, ul
 	&__info
 		max-width: 165px
 		&-tel
-			display: inline-block
+			display: block
 			color: #373737
 			float: right
 			font-size: 1.25rem
@@ -163,7 +164,7 @@ p, ul
 				text-decoration: none
 				color: #373737
 		&-email
-			display: inline-block
+			display: block
 			color: #393939
 			float: right
 			font-size: 0.875rem
@@ -313,12 +314,11 @@ p, ul
 /*---Navigation---styles---end---*/
 /*---News---styles*/
 .news
-	padding-top: 95px;
-	background: #fff;
+	padding-top: 50px;
 	position: relative;
 	&__content
 		&-heading
-			color: #272727;
+			color: $contentHeaderColor;
 			font-size: 2.25rem;
 			font-family: $contentBoldFont;
 			padding-bottom: 25px;
@@ -342,6 +342,58 @@ p, ul
 				text-decoration: none;
 	&__video
 		cursor: pointer;
+	&__heading
+		color: $contentHeaderColor;
+		font-family: $contentBoldFont;
+		font-size: 2.25rem;
+		margin-bottom: 1.875rem;
+	&__foto
+		position: relative;
+		&-img
+			width: 100%;
+			margin-bottom: 2rem;
+			height: 26.25rem;
+		&-description
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 6.8125rem;
+			width: 100%;
+			background: rgba(0, 0, 0, .7);
+			color: #fff;
+			font-size: 1.375rem;
+			font-family: $contentBoldFont;
+			padding: 1rem;
+	&__item
+		width: 100%;
+		background: $newsItemBG;
+		margin-bottom: 2rem;
+		&-image
+			width: 100%;
+		&-content
+			&-heading
+				color: $newsItemHeader;
+				font-family: $contentBoldFont;
+				font-size: 1.125rem;
+				padding: 1rem;
+			&-text
+				color: $newsItemText;
+				padding: 0 1rem 1rem;
+			&-button 
+				text-align: right;
+			&-link
+				width: 115px;
+				height: 30px;
+				display: inline-block;
+				color: #fff;
+				background: $blueButtonBG;
+				line-height: 30px;
+				text-align: center;
+				text-decoration: none;
+				&:hover, &:focus
+					background: red;
+					text-decoration: none;
+					color: #fff;
 /*---News---styles---end---*/
 /*---Gallery---styles---*/
 .gallery
@@ -396,72 +448,15 @@ p, ul
 			text-align: center;
 			margin-bottom: 2rem;
 /*---Gallery---styles---end---*/
-/*---News---styles---*/
-.news
-	padding-top: 2.8125rem;
-	&__heading
-		color: #272727;
-		font-family: $contentBoldFont;
-		font-size: 2.25rem;
-		margin-bottom: 1.875rem;
-	&__foto
-		position: relative;
-		&-img
-			width: 100%;
-			margin-bottom: 2rem;
-			height: 26.25rem;
-		&-description
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			height: 6.8125rem;
-			width: 100%;
-			background: rgba(0, 0, 0, .7);
-			color: #fff;
-			font-size: 1.375rem;
-			font-family: $contentBoldFont;
-			padding: 1rem;
-	&__item
-		width: 100%;
-		background: #f0f0f0;
-		margin-bottom: 2rem;
-		&-image
-			width: 100%;
-		&-content
-			&-heading
-				color: #535353;
-				font-family: $contentBoldFont;
-				font-size: 1.125rem;
-				padding: 1rem;
-			&-text
-				color: #585858;
-				padding: 0 1rem 1rem;
-			&-button 
-				text-align: right;
-			&-link
-				width: 115px;
-				height: 30px;
-				display: inline-block;
-				color: #fff;
-				background: #1848b2;
-				line-height: 30px;
-				text-align: center;
-				text-decoration: none;
-				&:hover, &:focus
-					background: red;
-					text-decoration: none;
-					color: #fff;
-/*---News---styles---end---*/
 /*---News-more---styles---*/
 .news-more
 	padding-top: 50px
 	&__heading
-		line-height: 1.2
 		margin-bottom: 50px
 	&__subheading
 		margin: 90px 0 40px 
 	&__text
-		color: #272727;
+		color: $contentTextColor;
 		font-size: 1.125rem;
 		position: relative;
 		&-carousel
@@ -473,27 +468,27 @@ p, ul
 			&-link
 				display: block;
 				text-decoration: underline;
-				color: #164ec7;
+				color: $newsMoreLink;
 				width: max-content;
 				@include transition;
 				&:first-child
 					margin-bottom: 35px;
 				&:hover, &:focus
-					color: #1148be;
+					color: $newsMoreLinkHover;
 	&__item
 		width: 90%;
-		background: #f0f0f0;
+		background: $newsItemBG;
 		margin: 0 15px 20px 15px;
 		&-image
 			width: 100%;
 		&-content
 			&-heading
-				color: #535353;
+				color: $newsItemHeader;
 				font-family: $contentBoldFont;
 				font-size: 1.125rem;
 				padding: 30px 15px 20px;
 			&-text
-				color: #585858;
+				color: $newsItemText;
 				padding: 0 15px 50px;
 /*---News-more---styles---end---*/
 /*---About---styles---*/
@@ -985,7 +980,7 @@ p, ul
 #sync5 .owl-nav .owl-next
 	position: absolute;
 	top: -80px;
-	right: 73px;
+	right: 4.6875rem;
 	background-color: #000;
 	opacity: 0.7;
 	width: 3.75rem;
@@ -1008,7 +1003,7 @@ p, ul
 #sync5 .owl-nav .owl-prev
 	position: absolute;
 	top: -80px;
-	right: 13px;
+	right: 0.8125rem;
 	background-color: #000;
 	opacity: 0.7;
 	width: 3.75rem;

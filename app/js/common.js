@@ -85,19 +85,19 @@ $(function() {
         loop: true,
         responsiveRefreshRate : 200,
         navText: ['',''],
-        responsiveClass:true,
+        responsiveClass: true,
         responsive:{
         0:{
-            items: 1,
-            nav: false,
+            items: 1
         },
         410:{
-            items: 2,
-            nav: false
+            items: 2
         },
         600:{
-            items: 3,
-            nav: true
+            items: 3
+        },
+        1000:{
+            items: 4
         },
     }
     }).on('changed.owl.carousel');
