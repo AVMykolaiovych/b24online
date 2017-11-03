@@ -33,18 +33,43 @@
 		padding: 0.5rem;
 	.news__item-text
 		padding: 0 0.5rem;
+	#sync5 .owl-nav .owl-prev
+		right: 8px;
+	#sync5 .owl-nav .owl-next
+		right: 60px;
+	.news-more
+    	padding-top: 30px;
+	.news-more__heading
+		margin-bottom: 20px;
+	.news-more__text-info-link:first-child
+		margin-bottom: 15px;
+	.news-more__subheading
+		margin: 30px 0 20px;
+	.footer
+		padding-top: 30px;
+	.footer__social
+		margin-bottom: 20px;
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
-	html, body
-		font-size: 14px;
-	.navigation__list-item
-		padding: 0 6px;
-	.navigation__list-item--enter
-		margin-left: 0;
-	.navigation__list-link--search
-		padding: 20px 15px;
-	.navigation__list > .navigation__list-item:nth-of-type(1)
-		margin-left: 14px;
+	.navigation
+		display: none;
+	.dropdown-navigation__list-link
+		font-size: 1.25rem;
+	.header__lang-menu
+		display: inline-block;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		@include transition;
+	.header__lang-menu:hover, 
+	.header__lang-menu:focus
+			border: 2px solid #d1d1d1;
+	.header__lang-menu > .header__lang-img
+		width: 26px;
+	.dropdown-navigation__list > .dropdown-navigation__list-item:last-of-type > a
+		color: red;
+	.dropdown-navigation__list > .dropdown-navigation__list-item:last-of-type > a:hover,
+	.dropdown-navigation__list > .dropdown-navigation__list-item:last-of-type > a:focus
+		text-decoration: underline;
 	.feedback__connect
 		width: 400px;
 		padding: 10px;
@@ -72,25 +97,6 @@
 		width: 28.5rem;
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
-	.navigation
-		display: none;
-	.dropdown-navigation__list-link
-		font-size: 1.25rem;
-	.header__lang-menu
-		display: inline-block;
-		border: 2px solid transparent;
-		border-radius: 50%;
-		@include transition;
-	.header__lang-menu:hover, 
-	.header__lang-menu:focus
-			border: 2px solid #d1d1d1;
-	.header__lang-menu > .header__lang-img
-		width: 26px;
-	.dropdown-navigation__list > .dropdown-navigation__list-item:last-of-type > a
-		color: red;
-	.dropdown-navigation__list > .dropdown-navigation__list-item:last-of-type > a:hover,
-	.dropdown-navigation__list > .dropdown-navigation__list-item:last-of-type > a:focus
-		text-decoration: underline;
 	.feedback__connect
 		width: 100%;
 		padding: 25px;

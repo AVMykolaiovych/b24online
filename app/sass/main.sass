@@ -68,7 +68,7 @@ body
 	padding: 0;
 	background: #fcfcfc;
 	line-height: 1.4;
-	font-family: $main_font;
+	font-family: $contentMainFont;
 	overflow-x: hidden;
 	opacity: 1;
 h1,
@@ -92,6 +92,17 @@ p, ul
 	display: block
 	max-width: 100%
 	height: auto
+
+.content-header
+	color: $contentHeaderColor;
+	font-family: $contentBoldFont;
+	font-size: 2.25rem;
+
+.m0
+	margin: 0
+
+.p0
+	padding: 0
 
 /*---Header---styles---*/
 .header
@@ -187,7 +198,7 @@ p, ul
 	display: flex
 	align-items: center
 	justify-content: space-between
-	background: $nav_bg
+	background: $navigationBG
 	&__list
 		width: 100%
 		list-style-type: none
@@ -203,7 +214,7 @@ p, ul
 			width: auto
 			padding: 19px 0 14px
 			color: #fff
-			font-family: $bold_font
+			font-family: $contentBoldFont
 			border-bottom: 5px solid transparent
 			@include transition
 			&:hover, &:focus
@@ -275,7 +286,7 @@ p, ul
 		font-size: 0.875rem
 		letter-spacing: 1.2px
 		color: #fff
-		font-family: $bold_font
+		font-family: $contentBoldFont
 		@include transition
 		text-align: center
 		&:hover, &:focus
@@ -309,7 +320,7 @@ p, ul
 		&-heading
 			color: #272727;
 			font-size: 2.25rem;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			padding-bottom: 25px;
 		&-text
 			color: #525252;
@@ -337,12 +348,12 @@ p, ul
 	padding-top: 2.813rem;
 	&__heading
 		color: #272727;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 2.25rem;
 		margin-bottom: 3.125rem;
 	&__subheading
 		color: #6e6e6e;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 1.625rem;
 		margin-bottom: 2.25rem;
 	&__video
@@ -358,7 +369,7 @@ p, ul
 	&__foto
 		margin: 5rem 0 2.25rem;
 		color: #6e6e6e;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 1.625rem;
 		&-img
 			width: 22.5rem;
@@ -373,13 +384,13 @@ p, ul
 	&__documents
 		margin: 5rem 0 2.25rem;
 		color: #6e6e6e;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 1.625rem;
 		&-img
 			margin: 0 auto; 
 		&-description
 			color: #12347e;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			font-size: 1.25rem;
 			text-decoration: underline;
 			text-align: center;
@@ -390,7 +401,7 @@ p, ul
 	padding-top: 2.8125rem;
 	&__heading
 		color: #272727;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 2.25rem;
 		margin-bottom: 1.875rem;
 	&__foto
@@ -408,7 +419,7 @@ p, ul
 			background: rgba(0, 0, 0, .7);
 			color: #fff;
 			font-size: 1.375rem;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			padding: 1rem;
 	&__item
 		width: 100%;
@@ -419,7 +430,7 @@ p, ul
 		&-content
 			&-heading
 				color: #535353;
-				font-family: $bold_font;
+				font-family: $contentBoldFont;
 				font-size: 1.125rem;
 				padding: 1rem;
 			&-text
@@ -443,23 +454,54 @@ p, ul
 /*---News---styles---end---*/
 /*---News-more---styles---*/
 .news-more
-	padding-top: 50px; 
+	padding-top: 50px
 	&__heading
-		color: #272727;
-		font-family: $bold_font;
-		font-size: 2.25rem;
-		line-height: 1.2;
-		margin-bottom: 50px; 
+		line-height: 1.2
+		margin-bottom: 50px
+	&__subheading
+		margin: 90px 0 40px 
 	&__text
 		color: #272727;
 		font-size: 1.125rem;
+		position: relative;
+		&-carousel
+			width: 50%;
+			float: right;
+		&-info
+			padding: 0 0 20px;
+			line-height: 1.7;
+			&-link
+				display: block;
+				text-decoration: underline;
+				color: #164ec7;
+				width: max-content;
+				@include transition;
+				&:first-child
+					margin-bottom: 35px;
+				&:hover, &:focus
+					color: #1148be;
+	&__item
+		width: 90%;
+		background: #f0f0f0;
+		margin: 0 15px 20px 15px;
+		&-image
+			width: 100%;
+		&-content
+			&-heading
+				color: #535353;
+				font-family: $contentBoldFont;
+				font-size: 1.125rem;
+				padding: 30px 15px 20px;
+			&-text
+				color: #585858;
+				padding: 0 15px 50px;
 /*---News-more---styles---end---*/
 /*---About---styles---*/
 .about
 	padding-top: 3.75rem;
 	&__heading
 		color: #272727;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 2.25rem;
 	&__content
 		width: 100%;
@@ -480,10 +522,10 @@ p, ul
 		&-heading 
 			color: #12347e;
 			font-size: 2.875rem;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 		&-text 
 			color: #12347e;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 /*---About---styles---end---*/
 /*---Projects---styles---*/
 .projects
@@ -492,12 +534,12 @@ p, ul
 		position: relative;
 	&__heading
 		color: #272727;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 2.25rem;
 		padding-bottom: 2.188rem;
 	&__subheading
 		color: #151515;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 1.625rem;
 		line-height: 1;
 		margin-bottom: 4.688rem;
@@ -507,7 +549,7 @@ p, ul
 		left: -17.313rem;
 		transform: translateY(-50%);
 		color: #12347e;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 2.188rem;
 		line-height: 1;
 	&__description
@@ -519,12 +561,12 @@ p, ul
 	padding-top: 2.813rem;
 	&__heading
 		color: #272727;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 2.250rem;
 		margin-bottom: 2.813rem;
 	&__subheading
 		color: #6e6e6e;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 1.625rem;
 		margin-bottom: 2.0rem;
 	&__manager
@@ -545,12 +587,12 @@ p, ul
 			&-fullname
 				color: #272727;
 				font-size: 1.250rem;
-				font-family: $bold_font;
+				font-family: $contentBoldFont;
 				user-select: none;
 			&-rate
 				color: #6e6e6e;
 				font-size: 1.125rem;
-				font-family: $bold_font;
+				font-family: $contentBoldFont;
 				user-select: none;
 		&-button
 			position: absolute;
@@ -574,7 +616,7 @@ p, ul
 	background: #fff;
 	&__heading
 		color: #272727;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 2.250rem;
 		padding-left: 15px;
 		margin-bottom: 60px
@@ -589,32 +631,32 @@ p, ul
 		&-heading
 			color: #4d4d4d;
 			font-size: 3.500rem;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			margin-bottom: 2.188rem;
 		&-subheading
 			color: #4d4d4d;
 			font-size: 1.625rem;
-			font-family: $bold_font;	
+			font-family: $contentBoldFont;	
 	&__map
 		margin-top: 3.750rem;
 		&-heading		
 			color: #272727;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			font-size: 2.25rem;
 			padding-bottom: 3.750rem;
 		&-address	
 			color: #272727;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			font-size: 1rem;	
 			padding-bottom: 2.188rem;
 		&-tel	
 			color: #272727;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			font-size: 2.25rem;
 			padding-bottom: 1.563rem;	
 		&-email		
 			color: #272727;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			font-size: 1rem;	
 			padding-bottom: 3.125rem;
 		&-google	
@@ -632,7 +674,7 @@ p, ul
 				margin-bottom: 0;
 		&-heading
 			color: #272727;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			font-size: 2.25rem;
 			padding-bottom: 2.5rem;
 		&-name
@@ -652,7 +694,7 @@ p, ul
 			color: #fff;
 			text-transform: uppercase;
 			font-size: 1.125rem;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			background-color: #1848b2;
 			letter-spacing: 1.5px;
 			@include transition;
@@ -669,7 +711,7 @@ p, ul
 	padding-top: 2.813rem;
 	&__header
 		color: #272727;
-		font-family: $bold_font;
+		font-family: $contentBoldFont;
 		font-size: 2.250rem;
 		margin-bottom: 2.813rem;
 	&__akkordeon
@@ -680,7 +722,7 @@ p, ul
 			position: relative;
 			margin: 0;
 			color: #272727;
-			font-family: $bold_font;
+			font-family: $contentBoldFont;
 			font-size: 1.125rem;
 			background: #f0f0f0;
 			@include transition;
@@ -760,18 +802,21 @@ p, ul
 /*---Footer---styles---end---*/
 /*---Owl---carousel---styles*/
 #sync1 .item, 
-#sync3 .item 
+#sync3 .item
 	background-position: center center;
 	background-size: cover;
 	height: 400px;
-#sync3.owl-carousel.owl-theme.owl-loaded.owl-drag
+#sync4 .item
+	background-size: cover;
+	height: 400px;
+#sync4.owl-carousel.owl-theme.owl-loaded.owl-drag
 	overflow: hidden;
 #sync1 .item__description
 	position: relative;
 	height: 7.5rem;
 	background-color: #272727;
 	color: #fff;
-	font-family: $italic_font;
+	font-family: $contentItalicFont;
 	padding: 1.5625rem 4.6875rem 1.5625rem 0.9375rem;
 #sync2 .item
 	height: 11.25rem; 
@@ -797,7 +842,7 @@ p, ul
 #sync2 .item .current .item
     background: #0c83e7;
 #sync2 .owl-item.active.current > .item
-	background: $nav_bg;
+	background: $navigationBG;
 	color: #fff;
 #sync2 .owl-item.active.current > .item::before	
 	content: "";
@@ -870,12 +915,13 @@ p, ul
 	opacity: 0;
 .owl-item.active
 	opacity: 1;
-
-#sync3 .owl-nav
+#sync3 .owl-nav,
+#sync4 .owl-nav
 	position: absolute;
 	right: 0;
 	margin: 0;
-#sync3 .owl-nav .owl-prev
+#sync3 .owl-nav .owl-prev,
+#sync4 .owl-nav .owl-prev
 	position: absolute;
 	top: -7.5rem;
 	right: 0;
@@ -886,9 +932,12 @@ p, ul
 	margin: 0;
 	border-radius: 0;
 #sync3 .owl-nav .owl-prev:hover,
-#sync3 .owl-nav .owl-prev:focus
+#sync4 .owl-nav .owl-prev:hover,
+#sync3 .owl-nav .owl-prev:focus,
+#sync4 .owl-nav .owl-prev:focus
 	opacity: 0.5;
-#sync3 .owl-nav .owl-prev::before
+#sync3 .owl-nav .owl-prev::before,
+#sync4 .owl-nav .owl-prev::before
 	content: '\e803';
 	font-family: 'fontello';
 	position: absolute;
@@ -898,7 +947,8 @@ p, ul
 	right: 1.313rem;
 	font-size: 1.75rem;
 	font-weight: 700;
-#sync3 .owl-nav .owl-next
+#sync3 .owl-nav .owl-next,
+#sync4 .owl-nav .owl-next
 	position: absolute;
 	top: -3.75rem;
 	right: 0;
@@ -909,9 +959,12 @@ p, ul
 	margin: 0;
 	border-radius: 0;
 #sync3 .owl-nav .owl-next:hover,
-#sync3 .owl-nav .owl-next:focus
+#sync4 .owl-nav .owl-next:hover,
+#sync3 .owl-nav .owl-next:focus,
+#sync4 .owl-nav .owl-next:focus
 	opacity: 0.5;
-#sync3 .owl-nav .owl-next::before
+#sync3 .owl-nav .owl-next::before,
+#sync4 .owl-nav .owl-next::before
 	content: '\e802';
 	font-family: 'fontello';
 	position: absolute;
@@ -919,6 +972,60 @@ p, ul
 	top: 50%;
 	transform: translateY(-50%);
 	right: 1.313rem;
+	font-size: 1.75rem;
+	font-weight: 700;
+#sync5.owl-theme
+  	position: relative
+#sync5 .owl-nav
+	position: absolute
+	display: block
+	top: 0
+	right: 0;
+	margin: 0;
+#sync5 .owl-nav .owl-next
+	position: absolute;
+	top: -80px;
+	right: 73px;
+	background-color: #000;
+	opacity: 0.7;
+	width: 3.75rem;
+	height: 3.75rem;
+	margin: 0;
+	border-radius: 0;
+#sync5 .owl-nav .owl-next:hover,
+#sync5 .owl-nav .owl-next:focus
+	opacity: 0.5;
+#sync5 .owl-nav .owl-next::before
+	content: '\e802';
+	font-family: 'fontello';
+	position: absolute;
+	color: #fff;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20px;
+	font-size: 1.75rem;
+	font-weight: 700;
+#sync5 .owl-nav .owl-prev
+	position: absolute;
+	top: -80px;
+	right: 13px;
+	background-color: #000;
+	opacity: 0.7;
+	width: 3.75rem;
+	height: 3.75rem;
+	margin: 0;
+	border-radius: 0;
+#sync5 .owl-nav .owl-prev:hover,
+#sync5 .owl-nav .owl-prev:focus
+	opacity: 0.5;
+#sync5 .owl-nav .owl-prev::before
+	content: '\e803';
+	font-family: 'fontello';
+	position: absolute;
+	color: #fff;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20px;
 	font-size: 1.75rem;
 	font-weight: 700;
 /*---Owl---carousel---styles---end---*/

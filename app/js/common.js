@@ -23,7 +23,9 @@ $(function() {
 	/*---Connected---owl-carousel---slider---*/
 	var sync1 = $("#sync1");
     var sync2 = $("#sync2");
-	var sync3 = $("#sync3");
+    var sync3 = $("#sync3");
+    var sync4 = $("#sync4");
+	var sync5 = $("#sync5");
 	var slidesPerPage = 4;
 	var syncedSecondary = true;
 
@@ -38,7 +40,6 @@ $(function() {
 		responsiveRefreshRate : 200,
 		navText: ['',''],
   	}).on('changed.owl.carousel', syncPosition);
-
   	sync2
   	.on('initialized.owl.carousel', function () {
   		sync2.find(".owl-item").eq(0).addClass("current");
@@ -52,7 +53,6 @@ $(function() {
     	slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
     	responsiveRefreshRate : 200,
 	}).on('changed.owl.carousel', syncPosition2);
-
     sync3.owlCarousel({
         items : 1,
         slideSpeed : 500,
@@ -63,6 +63,43 @@ $(function() {
         loop: true,
         responsiveRefreshRate : 200,
         navText: ['',''],
+    }).on('changed.owl.carousel');
+    sync4.owlCarousel({
+        items : 1,
+        slideSpeed : 500,
+        smartSpeed: 600,
+        nav: true,
+        autoplay: false,
+        dots: false,
+        loop: true,
+        responsiveRefreshRate : 200,
+        navText: ['',''],
+    }).on('changed.owl.carousel');
+    sync5.owlCarousel({
+        items : 4,
+        slideSpeed : 500,
+        smartSpeed: 600,
+        nav: true,
+        autoplay: false,
+        dots: false,
+        loop: true,
+        responsiveRefreshRate : 200,
+        navText: ['',''],
+        responsiveClass:true,
+        responsive:{
+        0:{
+            items: 1,
+            nav: false,
+        },
+        410:{
+            items: 2,
+            nav: false
+        },
+        600:{
+            items: 3,
+            nav: true
+        },
+    }
     }).on('changed.owl.carousel');
 
   	function syncPosition(el) {
