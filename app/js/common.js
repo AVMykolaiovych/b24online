@@ -25,7 +25,8 @@ $(function() {
     var sync2 = $("#sync2");
     var sync3 = $("#sync3");
     var sync4 = $("#sync4");
-	var sync5 = $("#sync5");
+    var sync5 = $("#sync5");
+	var sync6 = $("#sync6");
 	var slidesPerPage = 4;
 	var syncedSecondary = true;
 
@@ -98,6 +99,36 @@ $(function() {
         },
         1000:{
             items: 4
+        },
+    }
+    }).on('changed.owl.carousel');
+    sync6.owlCarousel({
+        items : 6,
+        slideSpeed : 500,
+        smartSpeed: 600,
+        nav: true,
+        autoplay: false,
+        dots: false,
+        loop: true,
+        stagePadding: 50,
+        responsiveRefreshRate : 200,
+        navText: ['',''],
+        responsiveClass: true,
+        responsive:{
+        0:{
+            items: 2
+        },
+        480:{
+            items: 3
+        },
+        767:{
+            items: 4
+        },
+        992:{
+            items: 5
+        },
+        1200:{
+            items: 6
         },
     }
     }).on('changed.owl.carousel');
